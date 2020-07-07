@@ -19,6 +19,10 @@ class Apartment
      */
     private ?int $id = null;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private ?string $title = null;
 
     /**
      * @ORM\Column(type="text")
@@ -26,12 +30,12 @@ class Apartment
     private ?string $description = null;
 
     /**
-     * @ORM\Column(type="money", precision=8, scale=2)
+     * @ORM\Column(type="decimal", precision=8, scale=2)
      */
     private ?float $price = null;
 
     /**
-     * @ORM\Column(type="money", precision=8, scale=2)
+     * @ORM\Column(type="decimal", precision=8, scale=2)
      */
     private ?float $discount = null;
 
@@ -41,6 +45,24 @@ class Apartment
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     * @return Apartment
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+        return $this;
     }
 
     /**
